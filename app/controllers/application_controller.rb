@@ -7,8 +7,12 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get "/" do
-    erb :welcome
+  get '/' do
+    if logged_in?
+      redirect '/lists'
+    else
+      erb :welcome
+    end
   end
 
   helpers do
@@ -21,12 +25,5 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  # get '/' do
-  #   if logged_in?
-  #     redirect '/tweets'
-  #   else
-  #     erb :index
-  #   end
-  # end
 
 end
