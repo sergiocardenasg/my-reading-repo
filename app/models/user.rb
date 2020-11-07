@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
     has_secure_password
-    has_many :lists
-    has_many :books, through: :booklists   
+    has_many :books  
 end
