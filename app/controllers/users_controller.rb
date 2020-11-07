@@ -9,7 +9,10 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        if params[:email] == "" || params[:password] == ""
+        user_exists = User.find_by(:email => params[:email])
+        if user_exists
+            redirect '/userexists'
+        elsif params[:email] == "" || params[:password] == ""
             redirect '/signup'
         else
             user = User.new(params)
