@@ -28,6 +28,12 @@ p, h1, h2, h3, h4, h5, h6, ul {
 
 img {
   max-width: 100%; }
+  
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; }
 
 ul {
   padding-left: 0;
@@ -38,6 +44,15 @@ a:hover {
 
 :focus {
   outline: none; }
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #39459b;
+  color: white;
+  text-align: center;
+}
 
 .wrapper {
   min-height: 100vh;

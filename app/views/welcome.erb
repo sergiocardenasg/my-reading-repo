@@ -1,4 +1,4 @@
-<div class="container">
+<%# <div class="container">
   <header><img src="images/logo-mrr.png"></header>
   <div class="col-md-8 col-md-offset-2">
     <h2>Welcome to MyReadingRepo!</h2>
@@ -9,4 +9,26 @@
     </div>
 
   </div>
+</div> %>
+
+<div class="inner">
+<form action='/signup' method='post'>
+  <header> <img class="center" src="images/logo-mrr.png"></header>
+    <h3>Welcome to MyReadingRepo!</h3>
+    <p>Please Sign Up to Begin!</p>
+    <label class="form-group">
+      <input type='text' name='email' id='email' class="form-control" required>
+      <span>Email</span>
+      <span class="border"></span>
+    </label>
+    <label class="form-group">
+      <input type='password' name='password' id='password' class="form-control"  required>
+      <span for="">Password</span>
+      <span class="border"></span>
+    </label>
+    <button type='submit'> Submit
+      <i class="zmdi zmdi-arrow-right"></i>
+    </button>
+  </form> <br>
+  <p> Already have an account? <a href="/login">Log In</a> here. </p>
 </div>
