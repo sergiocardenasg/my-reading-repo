@@ -11,7 +11,9 @@ class UsersController < ApplicationController
     post '/signup' do
         user_exists = User.find_by(:email => params[:email])
         if user_exists
-            redirect '/userexists'
+            # redirect '/userexists'
+            flash[:alert] = "There is already an account for #{params[:email]}. Please login or create a new account with a different email address."
+            redirect '/signup'
         elsif params[:email] == "" || params[:password] == ""
             redirect '/signup'
         else

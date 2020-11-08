@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <% flash.keys.each do |type| %>
+      <div data-alert class="flash <%= type %> alert-box radius">
+      <%= flash[type] %>  
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      </div>
+    <% end %>
     <div class="wrapper">
-
         <%= yield %>
-
     </div>
 
       <div class="footer">
