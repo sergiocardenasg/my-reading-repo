@@ -51,14 +51,12 @@ a:hover {
   width: 100%;
   background-color: #39459b;
   color: white;
-  text-align: center;
-}
+  text-align: center; }
 
 .alert {
   padding: 20px;
   background-color: #f44336;
-  color: white;
-}
+  color: white; }
 
 .closebtn {
   margin-left: 15px;
@@ -68,12 +66,19 @@ a:hover {
   font-size: 22px;
   line-height: 20px;
   cursor: pointer;
-  transition: 0.3s;
-}
+  transition: 0.3s; }
 
 .closebtn:hover {
-  color: black;
-}
+  color: black; }
+
+.container {
+  position: relative; }
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px; }
 
 .wrapper {
   min-height: 100vh;
