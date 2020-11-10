@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     
     get '/signup' do
         if logged_in?
-            redirect to '/lists'
+            redirect to '/books'
         else
             erb :welcome
         end
@@ -20,13 +20,13 @@ class UsersController < ApplicationController
             user = User.new(params)
             user.save
             session[:user_id] = user.id
-            redirect '/lists'
+            redirect '/books'
         end
     end
 
     get '/login' do
         if logged_in?
-            redirect '/lists'
+            redirect '/books'
         else
             erb :'users/login'
         end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 		user = User.find_by(:email => params[:email])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect '/lists'
+            redirect '/books'
         else
 			redirect '/login'
 		end
