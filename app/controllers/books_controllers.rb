@@ -27,13 +27,13 @@ class BooksController < ApplicationController
                     current_user.books << @book
                     case params["list"]
                     when "favorite"
-                        current_user.favorite_list(@book)
+                        current_user.books.favorite_list(@book)
                         redirect "/books/#{@book.id}"
                     when "reading"
-                        current_user.read_list(@book)
+                        current_user.books.read_list(@book)
                         redirect "/books/#{@book.id}"
                     when "worsts"
-                        current_user.worst_list(@book)
+                        current_user.books.worst_list(@book)
                         redirect "/books/#{@book.id}"
                     end
                 end
@@ -43,12 +43,69 @@ class BooksController < ApplicationController
         end
     end
 
+    get '/toplist' do
+        if logged_in?
+            erb :'books/top'
+        else
+            redirect '/login'
+        end
+    end
+
+    get '/readlist' do
+        if logged_in?
+            erb :'books/readlist'
+        else
+            redirect '/login'
+        end
+    end
+
+    get '/worstlist' do
+        if logged_in?
+            erb :'books/worst'
+        else
+            redirect '/login'
+        end
+    end
+
     get '/books/:id' do
         if logged_in?
             @book = Book.find_by_id(params[:id])
             erb :'books/read'
         else
             redirect '/login'
+        end
+    end
+
+    get '/books/:id/edit' do
+        if logged_in?
+            @book = Book.find_by_id(params[:id])
+            if params[:list] == ""
+                flash[:warning] = "Please Select a List."
+                redirect "/books/#{params[:id]}/edit"
+            else
+                if @book.user_id == @current_user.id
+                    erb :'books/update'
+                end
+            end
+        else
+          redirect '/login'
+        end
+    end
+
+    patch '/books/:id' do
+        if logged_in?
+            if params[:list] == ""
+                flash[:warning] = "Please Select a List."
+                redirect "/books/#{params[:id]}/edit"
+            else
+                @book = Book.find_by_id(params[:id])
+                if @book.user_id == @current_user.id
+                    @book = Book.update(params)
+                    redirect "/books/#{params[:id]}"
+                end
+            end
+        else
+          redirect '/login'
         end
     end
 

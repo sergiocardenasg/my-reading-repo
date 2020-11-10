@@ -5,7 +5,7 @@
     top: 8px;
     right: 16px;
     font-size: 18px;
-    background-color: #39459b;
+    text-align: right;
 }
 
 .create {
@@ -15,7 +15,6 @@
     border: 5px solid gray;
     margin: auto;
     width: 50%;
-    background-color: #39459b;
     position: fixed;
     top: 10%;
     left: 25%;
@@ -24,15 +23,15 @@
 </style>
 
 <div class="topright">
-    Welcome, <%=@current_user.email%> 
+    Welcome, <%=@current_user.email%> <br>
+    <a href="/logout"> Logout</a>
 </div>
 
 <div class="create">
     Click <a href="/books/new"> here</a> to add a new book to one of your lists!
 </div>
 
-<h2> Your Lists: </h2>
-<p> Click <a href="/readlist"> here </a> to see books you've added to your readlist! </p>
-<p> Click <a href="/toplist"> here </a> to see your top-rated books! </p>
-<p> Click <a href="/worstlist"> here </a> to see your worst-rated books! </p>
+<p> Click <a href="/readlist"> here</a> to see books you've added to your readlist! </p>
+<p> Click <a href="/toplist"> here</a> to see your top-rated books! </p>
+<p> Click <a href="/worstlist"> here</a> to see your worst-rated books! </p>
 

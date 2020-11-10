@@ -1,0 +1,5 @@
+<h4> Here are is your readlist: </h4>
+<%current_user.books.each_with_index do |books, index|%>
+    <%indexplusone = index + 1%>
+    <%=indexplusone%>. <%=books.title%> - <%=books.author%> (<%=books.genre%> )
+<%end%>
