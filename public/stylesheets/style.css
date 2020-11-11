@@ -78,7 +78,8 @@ a:hover {
   position: absolute;
   top: 8px;
   right: 16px;
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: right;}
 
 .wrapper {
   min-height: 100vh;

@@ -25,26 +25,17 @@ class BooksController < ApplicationController
                 @book = Book.new(params)
                 if @book.save
                     current_user.books << @book
-                    case params["list"]
-                    when "favorite"
-                        current_user.books.favorite_list(@book)
-                        redirect "/books/#{@book.id}"
-                    when "reading"
-                        current_user.books.read_list(@book)
-                        redirect "/books/#{@book.id}"
-                    when "worsts"
-                        current_user.books.worst_list(@book)
-                        redirect "/books/#{@book.id}"
-                    end
+                    redirect "/books/#{@book.id}"
                 end
             end
         else
-            redirect to "/books/new"
+            redirect "/books/new"
         end
     end
 
     get '/toplist' do
-        if logged_in?
+        @list = current_user.books.where(list: 'Favorite')
+        if logged_in? 
             erb :'books/top'
         else
             redirect '/login'
@@ -52,6 +43,7 @@ class BooksController < ApplicationController
     end
 
     get '/readlist' do
+        @list = current_user.books.where(list: 'Reading')
         if logged_in?
             erb :'books/readlist'
         else
@@ -60,6 +52,7 @@ class BooksController < ApplicationController
     end
 
     get '/worstlist' do
+        @list = current_user.books.where(list: 'Worst')
         if logged_in?
             erb :'books/worst'
         else
@@ -68,9 +61,13 @@ class BooksController < ApplicationController
     end
 
     get '/books/:id' do
-        if logged_in?
+        if logged_in? 
             @book = Book.find_by_id(params[:id])
-            erb :'books/read'
+            if @book.user_id == @current_user.id
+                erb :'books/read'
+            else
+                redirect '/books'
+            end
         else
             redirect '/login'
         end
@@ -100,7 +97,8 @@ class BooksController < ApplicationController
             else
                 @book = Book.find_by_id(params[:id])
                 if @book.user_id == @current_user.id
-                    @book = Book.update(params)
+                    #binding.pry
+                    @book.update(params[:book])
                     redirect "/books/#{params[:id]}"
                 end
             end
@@ -112,7 +110,7 @@ class BooksController < ApplicationController
     delete '/books/:id/delete' do
         if logged_in?
             @book = Book.find_by_id(params[:id])
-            if @book.user_id == @book.id
+            if @book.user_id == @current_user.id
                 @book.delete
                 redirect "/books"
             end

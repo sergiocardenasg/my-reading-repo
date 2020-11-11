@@ -8,16 +8,53 @@
     text-align: right;
 }
 
-.create {
+button.create {
     padding: 10px;
     font-size: 18px;
     text-align: center;
-    border: 5px solid gray;
+    border: 5px solid green;
     margin: auto;
     width: 50%;
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 25%;
+    background-color: #39459b;
+}
+
+button.a {
+    display: inline-block; /* the default for span */
+    width: 20%;
+    height: 300px;
+    padding: 5px;
+    border: 5px solid green;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-color: #39459b;
+}
+
+button.b {
+    display: inline-block; /* the default for span */
+    width: 20%;
+    height: 300px;
+    padding: 5px;
+    border: 5px solid green;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    background-color: #39459b;
+}
+
+button.c {
+    display: inline-block; /* the default for span */
+    width: 20%;
+    height: 300px;
+    padding: 5px;
+    border: 5px solid green;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background-color: #39459b;
 }
 
 </style>
@@ -27,11 +64,26 @@
     <a href="/logout"> Logout</a>
 </div>
 
-<div class="create">
+<%# <div class="create">
     Click <a href="/books/new"> here</a> to add a new book to one of your lists!
-</div>
+</div> %>
 
-<p> Click <a href="/readlist"> here</a> to see books you've added to your readlist! </p>
-<p> Click <a href="/toplist"> here</a> to see your top-rated books! </p>
-<p> Click <a href="/worstlist"> here</a> to see your worst-rated books! </p>
+<form action="/books/new">
+  <button class='create'> Click here to add a new book to one of your lists! </button>
+</form>
 
+<%# <form action="/books/new">
+  <button class='create'> <p> Click here to add a new book to one of your lists! </p> </button>
+</form> %>
+
+<form action="/readlist">
+  <button class='a'> <p> Read List </p> </button>
+</form>
+
+<form action="/toplist">
+  <button class='b'> <p> Top List </p> </button>
+</form>
+
+<form action="/worstlist">
+  <button class='c'> <p> Worst List </p> </button>
+</form>
