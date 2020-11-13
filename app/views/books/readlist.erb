@@ -1,5 +1,42 @@
-<h4> Here are is your readlist: </h4> <br>
-<%@list.each_with_index do |books, index|%>
-    <%indexplusone = index + 1%>
-    <a href='/books/<%=books.id%>'> <%=indexplusone%>. <%=books.title%> - <%=books.author%> (<%=books.genre%>) </a> <br>
-<%end%>
+<style>
+li {
+    display: flex;
+    background: rgba(255,255,255,.1);
+    padding: 10px 20px;
+    color: #fff;
+    margin: 5px 0;
+    transition: .5s;
+}
+
+li:nth child(1){
+    background: rgba(255,255,255,.6);
+}
+
+li:nth child(2){
+    background: rgba(255,255,255,.4);
+}
+
+li:nth child(3){
+    background: rgba(255,255,255,.2);
+}
+
+span.position-data {
+    vertical-align: top;
+}
+</style>
+
+<span class='position-data'>
+    <h4> Here are is your readlist: </h4> <br>
+    <%@list.each_with_index do |book, index|%>
+        <ol>
+            <li> 
+                <%indexplusone = index + 1%>
+                <span class='number'> <%=indexplusone%>. </span>
+                <span> <a href='/books/<%=book.id%>'><%=book.title%></a> </span>
+                <span> <%=book.author%> </span>
+                <span> <%=book.genre%> </span>
+                <span> <i class="fa fa-book"></i> 
+            </li>
+        </ol>
+    <%end%>
+<span>
