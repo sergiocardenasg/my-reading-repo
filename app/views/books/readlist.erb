@@ -52,6 +52,16 @@ button.create {
     left: 25%;
     background-color: #39459b;
 }
+
+#list {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
 </style>
 
 <div class="topright">
@@ -62,6 +72,9 @@ button.create {
   <button class='create'> Click here to add a new book to one of your lists! </button>
 </form>
 
+<div id="list">
+    <h4> Here is Your <%=@type%>:</h4>
+</div>
 
     <table id="books" class="center">
         <tr>

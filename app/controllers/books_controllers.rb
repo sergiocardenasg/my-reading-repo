@@ -35,6 +35,7 @@ class BooksController < ApplicationController
 
     get '/toplist' do
         @list = current_user.books.where(list: 'Favorite')
+        @type = "Top List"
         if logged_in? 
             erb :'books/readlist'
         else
@@ -44,6 +45,7 @@ class BooksController < ApplicationController
 
     get '/readlist' do
         @list = current_user.books.where(list: 'Reading')
+        @type = "Read List"
         if logged_in?
             erb :'books/readlist'
         else
@@ -53,6 +55,7 @@ class BooksController < ApplicationController
 
     get '/worstlist' do
         @list = current_user.books.where(list: 'Worst')
+        @type = "Worst List"
         if logged_in?
             erb :'books/readlist'
         else
