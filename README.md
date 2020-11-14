@@ -31,10 +31,9 @@ And finally, boot up the server:
 
 Everything should be set up.
 
-
 ## Usage
 
-Sign up or create an account, then click the 'add a book' button to start putting books on your lists.
+Sign up or create an account, then click the 'add a book' button to start putting books within your lists.
 
 The form contains validation to make sure all fields are populated: title, author, genre, and what list do you want to put the book in.
 
@@ -97,7 +96,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/my-reading-repo/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/reading/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>my-reading-repo/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/reading/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -106,4 +105,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the MyReadingRepo project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/my-reading-repo/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the MyReadingRepo project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>my-reading-repo/blob/master/CODE_OF_CONDUCT.md).
