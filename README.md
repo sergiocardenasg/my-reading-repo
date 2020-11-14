@@ -1,18 +1,23 @@
 # MyReadingRepo
 
+Ever lost track of all the many books that have been recommended to you, or simply find interesting? What about the other way around, when people ask you for books recommendations and you fail to remember all the good books you've encountered?
 
+MyReadingRepo is the solution to your problems!
+
+Its simple interface allows you to keep track of:
+    1. Books you want to read
+    2. Books you've fallen in love with
+    3. Books you wouldn't recommend to your worst enemy
+
+You can add books to your lists at any time and update or delete them as you please!
+
+No more relying on your memory to store all the good (and bad) titles you have read through the years.
 
 ## Installation
 
 Clone this repo into your local environment and run the following commands:
 
-Add this line to install [Bundler](https://bundler.io/):
-
-```ruby
-gem 'install bundler'
-```
-
-And then execute this to install the [Ruby Gems](https://rubygems.org/):
+Execute this to install the [Ruby Gems](https://rubygems.org/):
 
     $ bundle install
 
@@ -28,6 +33,14 @@ Everything should be set up.
 
 
 ## Usage
+
+Sign up or create an account, then click the 'add a book' button to start putting books on your lists.
+
+The form contains validation to make sure all fields are populated: title, author, genre, and what list do you want to put the book in.
+
+After creating a book, head over to the homepage to reference any of your lists. In the lists pages, your books will show up in a structured table. Click the link on the title of each book to see details. There, you can update the details of a book (like moving one from your readlist to you favorite list) or delete a book entirely (maybe a book in your readlist you just finished).
+
+As simple as that.
 
 ## Project File Structure
 ```
