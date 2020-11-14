@@ -1,5 +1,0 @@
-<h4> Here are is your readlist: </h4> <br>
-<%@list.each_with_index do |books, index|%>
-    <%indexplusone = index + 1%>
-    <a href='/books/<%=books.id%>'> <%=indexplusone%>. <%=books.title%> - <%=books.author%> (<%=books.genre%>) </a> <br>
-<%end%>

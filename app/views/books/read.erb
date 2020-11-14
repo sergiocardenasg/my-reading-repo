@@ -1,8 +1,53 @@
-<%=@book.title%>
+<style>
+h3 {
+    padding: 10px;
+    text-align: center;
+    border: 5px solid green;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    background-color: #39459b;
+}
+
+button.delete {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 5px solid green;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    background-color: #39459b;
+}
+
+button.edit {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 5px solid green;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    background-color: #39459b;
+}
+</style>
+<span>
+  <h3> 
+    <%=@book.title%> <br> by <%=@book.author%> 
+  </h3>
+</span>
 
 <form method="post" action="/books/<%=@book.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Book">
+  <button class='delete' type="submit"> Click Here to Delete Book </button>
 </form>
 
-<a href="/books/<%=@book.id%>/edit">Edit Book </a>
+<form action="/books/<%=@book.id%>/edit">
+  <button class='edit' type="submit"> Edit Book Details</button>
+</form>

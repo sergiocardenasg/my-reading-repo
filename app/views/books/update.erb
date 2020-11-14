@@ -1,6 +1,6 @@
 <div class="inner">
 <form method="post" action="/books/<%=@book.id%>">
-    <h2>Edit Book Details Below</h2> <br>
+    <h2>Edit '<%=@book.title%>' Details Below</h2> <br>
     <input id="hidden" type="hidden" name="_method" value="PATCH">
     <label class="form-group">
       <input type='text' name='book[title]' id='title' class="form-control" required>
