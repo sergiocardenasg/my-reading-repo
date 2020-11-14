@@ -39,11 +39,28 @@ table.center {
 a {
   color: white;
 }
+
+button.create {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 5px solid green;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background-color: #39459b;
+}
 </style>
 
 <div class="topright">
     <a href="/books"> Homepage </a>
 </div>
+
+<form action="/books/new">
+  <button class='create'> Click here to add a new book to one of your lists! </button>
+</form>
 
 
     <table id="books" class="center">
