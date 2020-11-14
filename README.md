@@ -6,23 +6,26 @@
 
 Clone this repo into your local environment and run the following commands:
 
-1. `$ gem install bundler` ... to install [Bundler](https://bundler.io/)
-1. `$ bundle install` ... to install the [Ruby Gems](https://rubygems.org/).
-2. `$ shotgun` ... to boot up your server
-
-Add this line to your application's Gemfile:
+Add this line to install [Bundler](https://bundler.io/):
 
 ```ruby
-gem 'financial_data'
+gem 'install bundler'
 ```
 
-And then execute:
+And then execute this to install the [Ruby Gems](https://rubygems.org/):
 
     $ bundle install
 
-Or install it yourself as:
+Run migrations:
 
-    $ gem install financial_data
+    $ rake db:migrate 
+
+And finally, boot up the server:
+
+    $ shotgun
+
+Everything should be set up.
+
 
 ## Usage
 
