@@ -1,1 +1,126 @@
+# MyReadingRepo
 
+
+
+## Installation
+
+Clone this repo into your local environment and run the following commands:
+
+1. `$ gem install bundler` ... to install [Bundler](https://bundler.io/)
+1. `$ bundle install` ... to install the [Ruby Gems](https://rubygems.org/).
+2. `$ shotgun` ... to boot up your server
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'financial_data'
+```
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install financial_data
+
+## Usage
+
+## Project File Structure
+```
+├── ave_
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE.md
+├── README.md
+├── Rakefile
+├── t.id
+├── app
+│   ├── controllers
+│   │   ├── application_controller.rb
+│   │   ├── authors_controller.rb
+│   │   ├── books_controller.rb
+│   │   ├── genres_controller.rb
+│   │   ├── languages_controller.rb
+│   │   ├── locations_controller.rb
+│   │   ├── periods_controller.rb
+│   │   └── users_controller.rb
+│   ├── models
+│   │   ├── concearns
+│   │   │   ├── slugifiable.rb
+│   │   │   └── unknown_author.rb
+│   │   ├── author_location.rb
+│   │   ├── author_period.rb
+│   │   ├── author.rb
+│   │   ├── book_genre.rb
+│   │   ├── book_language.rb
+│   │   ├── book.rb
+│   │   ├── genre.rb
+│   │   ├── language.rb
+│   │   ├── location.rb
+│   │   ├── period.rb
+│   │   └── user.rb
+│   └── views
+│       ├──authors
+│       │   ├── authors.erb
+│       │   ├── create_author.erb
+│       │   ├── edit_author.rb
+│       │   └── show_author.rb
+│       ├── books
+│       │   ├── book.erb
+│       │   ├── create_book.erb
+│       │   ├── edit_book.rb
+│       │   └── show_author.rb
+│       ├── users
+│       │   ├── create_user.erb
+│       │   ├── login_error.erb
+│       │   ├── login.rb
+│       │   └── show.rb
+│       ├── display_validation_failure.erb
+│       ├── genres.erb
+│       ├── index.erb
+│       ├── languages.erb
+│       ├── layout.erb
+│       ├── library_layout.erb
+│       ├── library.erb
+│       ├── locations.erb
+│       └── periods.erb
+├── config
+│   └── environment.rb
+├── config.ru
+└── db
+    ├── development.sqlite
+    ├── migrate
+    │   ├── 20180126172118_create_authors.rb
+    │   ├── 20180126172135_create_books.rb
+    │   ├── 20180126172150_create_languages.rb
+    │   ├── 20180126172215_create_book_languages.rb
+    │   ├── 20180126172230_create_users.rb
+    │   ├── 20180126172256_create_author_periods.rb
+    │   ├── 20180126172437_create_genres.rb
+    │   ├── 20180126172452_create_periods.rb
+    │   ├── 20180126172511_create_locations.rb
+    │   ├── 20180126172536_create_author_locations.rb
+    │   └── 20180128042726_create_book_genres.rb
+    ├── schema.rb
+    └── seeds.rb
+```
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/my-reading-repo/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/reading/blob/master/CODE_OF_CONDUCT.md).
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the MyReadingRepo project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/my-reading-repo/blob/master/CODE_OF_CONDUCT.md).
