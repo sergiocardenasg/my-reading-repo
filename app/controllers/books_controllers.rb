@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     post '/books' do
         if logged_in?
             if params[:list] == ""
-                flash[:warning] = "Please Select a List."
+                flash[:alert] = "Please Select a List to Add Book."
                 redirect '/books/new'
             else
                 @book = Book.new(params)
@@ -79,13 +79,8 @@ class BooksController < ApplicationController
     get '/books/:id/edit' do
         if logged_in?
             @book = Book.find_by_id(params[:id])
-            if params[:list] == ""
-                flash[:warning] = "Please Select a List."
-                redirect "/books/#{params[:id]}/edit"
-            else
-                if @book.user_id == @current_user.id
-                    erb :'books/update'
-                end
+            if @book.user_id == @current_user.id
+                erb :'books/update'
             end
         else
           redirect '/login'
@@ -95,12 +90,12 @@ class BooksController < ApplicationController
     patch '/books/:id' do
         if logged_in?
             if params[:list] == ""
-                flash[:warning] = "Please Select a List."
+                #binding.pry
+                flash[:alert] = "Please Select a List."
                 redirect "/books/#{params[:id]}/edit"
             else
                 @book = Book.find_by_id(params[:id])
                 if @book.user_id == @current_user.id
-                    #binding.pry
                     @book.update(params[:book])
                     redirect "/books/#{params[:id]}"
                 end
