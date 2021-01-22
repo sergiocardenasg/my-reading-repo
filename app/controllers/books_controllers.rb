@@ -82,6 +82,7 @@ class BooksController < ApplicationController
             if @book.user_id == @current_user.id
                 erb :'books/update'
             end
+            redirect '/books'
         else
           redirect '/login'
         end
